@@ -1,0 +1,30 @@
+<style>
+	body {
+		background-image: url(<%= @url %>);
+		background-size: cover;
+	}
+</style>
+
+<%= render 'form' %>
+
+<div class="mdl-card-wide mdl-card mdl-shadow--2dp">
+	<div class="mdl-card__title md-color-text--primary">
+		<h1 Class="mdl-card__title-text">Forcast for <%= @location %>:</h1>
+	</div>
+	<div class="mdl-card__supporting-text mdl-grid">
+		<div class="mdl-cell mdl-cell--7-col">
+			<p>Temperature: <%= @temp_f %>&deg; F / <%= @temp_c %>&deg; C</p>
+			<p>Feels like: <%= @feels_like %>&deg; F</p>
+		</div>
+		<div class="mdl-cell mdl-cell--5-col">
+			<p>
+				<%= image_tag @weather_icon %><br>
+				<%= @weather_words %>
+			</p>
+		</div>
+	</div>
+
+	<div class="mdl-card__actions mdl-card--border">
+		<%= link_to 'Full Forecast', @forcast_link, target: 'blank', class: 'mdl-button mdl-button--accent mdl-js-button' %>
+	</div>
+</div>
